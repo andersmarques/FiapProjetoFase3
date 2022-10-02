@@ -21,6 +21,7 @@ public class AssistanceServiceImpl implements AssistanceService {
 
     @Override
     public List<Assistance> getAssistanceList() {
+
         return repository.findAll();
     }
 }
