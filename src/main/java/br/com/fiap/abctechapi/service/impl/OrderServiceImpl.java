@@ -1,5 +1,7 @@
 package br.com.fiap.abctechapi.service.impl;
 
+import br.com.fiap.abctechapi.handler.exception.MaxAssistsException;
+import br.com.fiap.abctechapi.handler.exception.MinimumAssistsRequiredException;
 import br.com.fiap.abctechapi.model.Assistance;
 import br.com.fiap.abctechapi.model.Order;
 import br.com.fiap.abctechapi.repository.AssistanceRepository;
@@ -37,11 +39,11 @@ public class OrderServiceImpl implements OrderService {
 
         if(!order.hasMinAssists())
         {
-            throw new Exception();
+            throw new MinimumAssistsRequiredException("invalid Assists", "Necessario no minimo 1 assistencia");
         }
         else if(order.exceedsMaxAssists())
         {
-            throw new Exception();
+            throw new MaxAssistsException("invalid Assists", "Necessario máximo de assistências é 15");
         }
 
         orderRepository.save(order);
