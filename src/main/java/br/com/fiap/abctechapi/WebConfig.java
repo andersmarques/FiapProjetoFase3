@@ -1,4 +1,4 @@
-package br.com.fiap.abctechservice;
+package br.com.fiap.abctechapi;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
