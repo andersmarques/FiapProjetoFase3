@@ -1,4 +1,4 @@
-name: Build And Test
+name: Build and Test
 run-name: Build and test workflow
 on:
     push:
